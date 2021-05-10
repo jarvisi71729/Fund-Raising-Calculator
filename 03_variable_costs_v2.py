@@ -55,7 +55,7 @@ def get_expenses(var_fixed):
         print()
 
         # get name, quantity and item
-        item_name = not_blank("Item name: ", "The component name cannot be blank.")
+        item_name = not_blank("Item name: ", "The compnent name cannot be blank.")
         if item_name.lower() == "xxx":
             break
 
@@ -72,7 +72,7 @@ def get_expenses(var_fixed):
     expense_frame = expense_frame.set_index('Item')
 
     # calculate cost of each component
-    expense_frame['Cost'] = expense_frame['Quantity'] * expense_frame
+    expense_frame['Cost'] = expense_frame['Quantity'] * expense_frame['Price']
 
     # Find sub total
     sub_total = expense_frame['Cost'].sum()
