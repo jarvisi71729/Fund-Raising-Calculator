@@ -121,7 +121,7 @@ def expenses_print(heading, frame, subtotal):
 product_name = not_blank("Product name: ", "The product name cannot be blank")
 
 print()
-print("Please enter your variable costs below...")
+print("Please enter your variable costs below: ")
 
 # get variable costs
 variable_expenses = get_expenses("variable")
@@ -141,10 +141,17 @@ else:
     fixed_sub = 0
 
 
+# end print statements0.
+
+
 print()
 print("*** Fund Raising - {} ***".format(product_name))
 print()
+
 expenses_print("Variable", variable_frame, variable_sub)
 
-if have_fixed == "yes":
-    expenses_print("Fixed", fixed_frame[['Cost']], fixed_sub)
+if have_fixed == "yes" or have_fixed == "y":
+    expenses_print("Fixed", fixed_frame, fixed_sub)
+
+print()
+print("Total: ${:.2f}".format(fixed_sub + variable_sub))

@@ -77,7 +77,7 @@ def get_expenses(var_fixed):
     # Find sub total
     sub_total = expense_frame['Cost'].sum()
 
-    # Currency Formatting  (uses currency fucntion)
+    # Currency Formatting  (uses currency function)
     add_dollars = ['Price', 'Cost']
     for item in add_dollars:
         expense_frame[item] = expense_frame[item].apply(currency)
