@@ -17,6 +17,7 @@ def yes_no(question):
         else:
             print(error)
 
+# work out profit goal and total sales required
 def profit_goal(total_costs):
 
     # Initialise variables and error message
