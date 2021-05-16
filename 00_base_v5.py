@@ -190,8 +190,13 @@ def round_up(amount, round_to):
 
 # *** Main Routine Starts Here ***
 
-# get product name (cant be blank)gtr5t4g
-product_name = not_blank("Product name: ", "The product name cannot be blank")
+# get product name (cant be blank)
+product_name = not_blank("Product name: ",
+                         "The product name cannot be blank")
+
+how_many = num_check("How many items will you be producing? ",
+                     "The number of items must be a whole "
+                     "number more than zero", int)
 
 print()
 print("Please enter your variable costs below: ")
@@ -217,8 +222,19 @@ else:
 all_costs = variable_sub + fixed_sub
 profit_target = profit_goal(all_costs)
 
+# calculate total sales needed to reach goal
+sales_needed = all_costs + profit_target
+
+# ask user for rounding
+round_to = num_check("Round to nearest...? $",
+                     "Can't be 0", int)
+
 # calculate recommended price
-selling_price = 0
+selling_price = sales_needed / how_many
+print("Selling Price (unrounded): "
+      "${:.2f}".format(selling_price))
+
+recommended_price = round_up(selling_price, round_to)
 
 # write data to file
 
