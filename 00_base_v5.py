@@ -190,7 +190,7 @@ def round_up(amount, round_to):
 
 # *** Main Routine Starts Here ***
 
-# get product name (cant be blank)
+# get product name (cant be blank)gtr5t4g
 product_name = not_blank("Product name: ", "The product name cannot be blank")
 
 print()
